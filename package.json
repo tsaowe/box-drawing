@@ -1,6 +1,6 @@
 {
   "name": "box-drawing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "box drawing for nodejs and browser",
   "main": "index.js",
   "repository": "git@github.com:tsaowe/box-drawing.git",
