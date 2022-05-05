@@ -1,5 +1,7 @@
-# this is a npm package run both in node and in the browser
+# npm package run both in node and in the browser
 
+> Idea from [Box-drawing character
+](https://en.wikipedia.org/wiki/Box-drawing_character) AND [linux tree command](https://en.wikipedia.org/wiki/Tree_(command))
 
 ## install
 ```
@@ -41,7 +43,7 @@ const list = [{
 
 ```
 
-#### situation 1
+#### situation 1, like linux tree
 ```
 console.log(boxDrawing(list));
 
@@ -60,7 +62,7 @@ console.log(boxDrawing(list));
         └─ child-2-3 
 ```
 
-#### situation 2
+#### situation 2, with comment line
 ```
 console.log(boxDrawing(list, 2));
 
