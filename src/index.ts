@@ -17,18 +17,18 @@ const repeatTime = 1;
 const FIRST = 'first';
 const LAST = 'last';
 
-const modifyName = name => {
+const modifyName = (name: any) => {
   return `${INDENT_BEFORE_NAME}${name}${INDENT_AFTER_NAME}`
 }
 
-function generateBoxItem(item, type) {
+function generateBoxItem(item: any, type: any) {
   const { name, children = [] } = item;
   switch (type) {
     case FIRST:
       const current = T + _.repeat(repeatTime) + modifyName(name);
       const child = boxDraw(children);
       if (child) {
-        let arr = child.split('\n').map((item) => `${I}${GAP}${item}`);
+        let arr = child.split('\n').map((item: any) => `${I}${GAP}${item}`);
         return [current, ...arr].join('\n');
       } else {
         return current;
@@ -37,7 +37,7 @@ function generateBoxItem(item, type) {
       const _current = L + _.repeat(repeatTime) + modifyName(name);
       const _child = boxDraw(children);
       if (_child) {
-        let arr = _child.split('\n').map((item) => `${GAP}${item}`);
+        let arr = _child.split('\n').map((item: any) => `${GAP}${item}`);
         return [_current, ...arr].join('\n');
       } else {
         return _current;
@@ -48,9 +48,10 @@ function generateBoxItem(item, type) {
   }
 }
 
-function boxDraw(list, leastShowDash = 0) {
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'boxDraw'.
+function boxDraw(list: any, leastShowDash = 0) {
   const resultLines = list
-    .map((file, index) => {
+    .map((file: any, index: any) => {
       const length = list.length;
       switch (length) {
         case 0:
@@ -64,12 +65,12 @@ function boxDraw(list, leastShowDash = 0) {
     .join('\n');
   if (leastShowDash) {
     const lines = resultLines.split('\n');
-    const maxLength = lines.reduce((max, line) => {
+    const maxLength = lines.reduce((max: any, line: any) => {
       return line.length > max ? line.length : max;
     }, 0);
 
     const lengthWithComment = maxLength + leastShowDash;
-    return lines.map((line) => {
+    return lines.map((line: any) => {
       const length = line.length;
       const gap = lengthWithComment - length;
       return `${line}${SUFFIX_UNIT.repeat(gap)}`;
@@ -79,5 +80,6 @@ function boxDraw(list, leastShowDash = 0) {
 }
 
 
+// @ts-expect-error ts-migrate(2580) FIXME: Cannot find name 'module'. Do you need to install ... Remove this comment to see the full error message
 module.exports = boxDraw;
 

@@ -1,4 +1,5 @@
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'boxDraw'.
 const boxDraw = require('./index');
 
 const list = [{
