@@ -1,7 +1,7 @@
 //  box drawing chars
 const L = '└';
 const T = '├';
-const _ = '─'
+const _ = '─';
 const I = '│';
 const SPACE = ' ';
 
@@ -11,15 +11,14 @@ const INDENT_BEFORE_NAME = SPACE.repeat(1);
 const INDENT_AFTER_NAME = SPACE.repeat(1);
 const SUFFIX_UNIT = '-';
 
-
 const repeatTime = 1;
 
 const FIRST = 'first';
 const LAST = 'last';
 
 const modifyName = (name: any) => {
-  return `${INDENT_BEFORE_NAME}${name}${INDENT_AFTER_NAME}`
-}
+  return `${INDENT_BEFORE_NAME}${name}${INDENT_AFTER_NAME}`;
+};
 
 function generateBoxItem(item: any, type: any) {
   const { name, children = [] } = item;
@@ -48,7 +47,6 @@ function generateBoxItem(item: any, type: any) {
   }
 }
 
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'boxDraw'.
 function boxDraw(list: any, leastShowDash = 0) {
   const resultLines = list
     .map((file: any, index: any) => {
@@ -70,16 +68,15 @@ function boxDraw(list: any, leastShowDash = 0) {
     }, 0);
 
     const lengthWithComment = maxLength + leastShowDash;
-    return lines.map((line: any) => {
-      const length = line.length;
-      const gap = lengthWithComment - length;
-      return `${line}${SUFFIX_UNIT.repeat(gap)}`;
-    }).join('\n');
+    return lines
+      .map((line: any) => {
+        const length = line.length;
+        const gap = lengthWithComment - length;
+        return `${line}${SUFFIX_UNIT.repeat(gap)}`;
+      })
+      .join('\n');
   }
   return resultLines;
 }
 
-
-// @ts-expect-error ts-migrate(2580) FIXME: Cannot find name 'module'. Do you need to install ... Remove this comment to see the full error message
-module.exports = boxDraw;
-
+export default boxDraw;
