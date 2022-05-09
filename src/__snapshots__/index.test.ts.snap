@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default tree 1`] = `
+"└─ parent-folder 
+    ├─ child-1 
+    │    ├─ child-1-1 
+    │    └─ child-1-2 
+    └─ child-2 
+        ├─ child-2-1 
+        ├─ child-2-2 
+        │    └─ child-2-2-1 
+        │        ├─ child-2-2-1-1 
+        │        └─ child-2-2-1-2 
+        └─ child-2-3 "
+`;
+
+exports[`default tree 2`] = `
+"└─ parent-folder -------------------
+    ├─ child-1 ---------------------
+    │    ├─ child-1-1 --------------
+    │    └─ child-1-2 --------------
+    └─ child-2 ---------------------
+        ├─ child-2-1 ---------------
+        ├─ child-2-2 ---------------
+        │    └─ child-2-2-1 --------
+        │        ├─ child-2-2-1-1 --
+        │        └─ child-2-2-1-2 --
+        └─ child-2-3 ---------------"
+`;
