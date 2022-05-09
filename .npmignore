@@ -1,0 +1,7 @@
+local
+.idea
+yarn.lock
+package-lock.json
+.DS_Store
+*.log
+.gitignore
